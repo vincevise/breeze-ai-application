@@ -8,7 +8,7 @@ const Protected = ({children}) => {
   
     const {user} = useContext(AuthContext)
     const navigate = useNavigate()
-
+    console.log(user)
     if(!user){
         return <Login/>
     }

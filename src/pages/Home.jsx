@@ -5,20 +5,16 @@ import { AvatarGenerator } from 'random-avatar-generator'
 
 
 const Home = () => {
-    const {logOut, user} = useContext(AuthContext)
-    const navigate = useNavigate()
+    const {logOut, user} = useContext(AuthContext) 
 
-    const [avatar, setAvatar] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [avatar, setAvatar] = useState(null) 
 
     const generateAvatar = async() => { 
         const generator = new AvatarGenerator()
         const photoURL = generator.generateRandomAvatar() 
 
-        setAvatar(photoURL)
-        return photoURL
-    }
-    console.log(loading)
+        setAvatar(photoURL) 
+    } 
   return (
     <div >
         <nav className='fixed bg-blue-400 w-full py-2 px-4'>

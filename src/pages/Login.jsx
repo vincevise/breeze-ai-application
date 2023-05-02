@@ -39,33 +39,35 @@ const Login = () => {
     console.log(cred);
 
   return (
-    <div className=' px-10 w-full min-h-screen  flex flex-col items-center justify-center gap-6'>
-        <h1 className='uppercase'>Login Form</h1>
-        <input 
-            type="email" 
-            placeholder='Email' 
-            className='px-4 py-2 min-w-[250px] w-[350px] outline-0 border-2 border-slate-300 focus:border-slate-600 rounded-md'
-            onChange={(e)=>handleChange(e)}
-            name='email'
-        />
-        <span className='relative flex items-center'>    
+     <div className=' sm:px-10 w-full min-h-screen  flex flex-col items-center justify-center gap-6'>
+        <div className='w-11/12 sm:w-[350px] px-4 py-10  border border-slate-300 '>
+
+            <h1 className='text-center'>Login Form</h1>
             <input 
-                type="password"
+                type="email" 
+                placeholder='Email' 
+                className='px-2 py-1 mt-2  w-full outline-0 border border-slate-300 focus:border-slate-600 rounded-sm'
+                onChange={(e)=>handleChange(e)}
+                name='email'
+            />
+
+            <input 
+                type="text" 
                 placeholder='Password' 
-                className='px-4 py-2 min-w-[250px] w-[350px] outline-0 border-2 border-slate-300 focus:border-slate-600 rounded-md'
+                className='px-2 py-1 my-2 w-full outline-0 border border-slate-300 focus:border-slate-600 rounded-sm'
                 onChange={(e)=>handleChange(e)}
                 name='password'
-                ref={inputRef}
             />
-            <button className='absolute right-5 text-sm font-semibold' onClick={handlePassword} ref={btnRef}>SHOW</button>
             
-        </span>
+            <button 
+                className='w-full my-2 py-1 bg-slate-600 hover:bg-slate-700 active:bg-slate-800 text-white rounded-sm text-sm font-semibold' onClick={handleClick}>
+                Login
+            </button>  
 
-        
-        <button 
-            className='px-4 py-2 bg-slate-600 hover:bg-slate-700 active:bg-slate-800 text-white rounded-md uppercase  font-semibold text-md' onClick={handleClick}>
-        Login</button>
-        <p>Don't have an account, <Link to={'/register'} className='text-blue-500 underline'>register</Link ></p>
+         
+            
+        </div>
+        <p className='w-[350px] px-4 py-2 text-center text-sm border border-slate-300'>Don't have an account, <Link to={'/register'} className='text-blue-500 underline'>Register</Link ></p>
     </div>
   )
 }

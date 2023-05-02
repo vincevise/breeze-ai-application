@@ -9,14 +9,16 @@ const Home = () => {
     const navigate = useNavigate()
 
     const [avatar, setAvatar] = useState(null)
+    const [loading, setLoading] = useState(false)
 
-    const generateAvatar = async() => {
+    const generateAvatar = async() => { 
         const generator = new AvatarGenerator()
-        const photoURL = generator.generateRandomAvatar()
+        const photoURL = generator.generateRandomAvatar() 
+
         setAvatar(photoURL)
         return photoURL
     }
-
+    console.log(loading)
   return (
     <div >
         <nav className='fixed bg-blue-400 w-full py-2 px-4'>
@@ -27,6 +29,7 @@ const Home = () => {
             <h1 className='shrink-0 w-full text-center mb-2'>Hello World!!</h1>
             <button onClick={generateAvatar} className='px-2 py-1 bg-green-500 mt-2 text-white font-semibold rounded-md active:bg-green-600 mb-4'>Generate Random Avatar</button>
             <div className='flex justify-center'>
+                
                 {avatar ? <img src={avatar} className='w-11/12 sm:w-[400px]  lg:w-[400px]' alt="" /> : <img src={ "https://static.vecteezy.com/system/resources/previews/007/296/443/original/user-icon-person-icon-client-symbol-profile-icon-vector.jpg"} className='w-11/12 sm:w-[400px]  lg:w-[400px]' alt="" />}
             </div>
             
